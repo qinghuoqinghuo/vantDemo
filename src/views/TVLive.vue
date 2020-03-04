@@ -2,7 +2,7 @@
     <div>
         <Navbar :title="title"></Navbar>
         <Live style="height:100vh;"></Live>
-        <Tabbar :activeTabBottom="activeTabBottom" ::info="indexInfo"></Tabbar>
+        <Tabbar :activeTabBottom="activeTabBottom" :indexInfo="indexInfo"></Tabbar>
     </div>
 
 </template>
@@ -13,14 +13,14 @@
 
     export default {
         name: 'live',
-        created(){
-            if(this.$router.currentRoute.query.title) {
+        created() {
+            if (this.$router.currentRoute.query.title) {
                 this.title = this.$router.currentRoute.query.title
             }
         },
-        data(){
+        data() {
             return {
-                title:'标题',
+                title: '标题',
                 activeTabBottom: 'b',
                 indexInfo: 5
             }

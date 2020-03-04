@@ -15,7 +15,7 @@
             <Cell v-if="!loading" :title="title2" :to="to2"></Cell>
             <Grid v-if="!loading" :gridData="gridData2" :columnNum="2" :gutter="4"></Grid>
         </van-pull-refresh>
-        <Tabbar :activeTabBottom="activeTabBottom" :info="indexInfo"></Tabbar>
+        <Tabbar :activeTabBottom="activeTabBottom" :indexInfo="indexInfo"></Tabbar>
     </div>
 </template>
 <script>

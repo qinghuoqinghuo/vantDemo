@@ -51,7 +51,7 @@
                 />
             </van-popup>
         </van-pull-refresh>
-        <Tabbar :activeTabBottom="activeTabBottom" :info="indexInfo"></Tabbar>
+        <Tabbar :activeTabBottom="activeTabBottom" :indexInfo="indexInfo"></Tabbar>
     </div>
 
 </template>
