@@ -2,7 +2,7 @@
     <div>
         <Tab :activeTabTop="activeTabTop"></Tab>
         <Search :search="search" :searchDefault="searchDefault"></Search>
-        <van-pull-refresh v-model="refreshing" @refresh="onRefresh">
+        <van-pull-refresh v-model="refreshing" @refresh="onRefresh" style="padding-bottom:50px;">
             <Carousel :imgData="imgData" v-if="!loading"></Carousel>
             <Noticebar :noticeBar="noticeBar" v-if="!loading"></Noticebar>
             <Skeleton :skeleton="skeleton" v-if="loading"></Skeleton>

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <van-pull-refresh v-model="refresh" @refresh="onRefresh">
+        <van-pull-refresh v-model="refresh" @refresh="onRefresh" style="padding-bottom:50px;">
             <van-row>
                 <van-col span="3">
                     <van-image

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <van-pull-refresh v-model="isLoading" @refresh="onRefresh">
+        <van-pull-refresh v-model="isLoading" @refresh="onRefresh" style="padding-bottom:100px;">
             <div class="shopCarList" :ref="item.container" v-for="(item,index) in shopCarData" :key="index">
                 <!--商店名称信息-->
                 <van-sticky :container="item.container">

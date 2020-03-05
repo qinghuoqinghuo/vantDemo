@@ -1,7 +1,7 @@
 <template>
     <van-grid :column-num="columnNum" :gutter="gutter">
         <van-grid-item v-for="(item,index) in gridData" :key="index" :icon="showIcon(item.icon)" :text="showIcon(item.text)" @click="clickGrid(item)">
-            <van-image v-if="item.src&&!item.icon" :src="item.src"/>
+            <van-image v-if="item.src&&!item.icon" :src="item.src" />
             <p v-if="item.title" class="gridTitle">{{item.title}}</p>
             <p v-if="item.subTitle" class="gridSubTitle">{{item.subTitle}}</p>
         </van-grid-item>
