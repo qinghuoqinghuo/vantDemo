@@ -1,7 +1,7 @@
 <template>
     <div>
         <van-popup v-model="show" :close-on-click-overlay="false">
-            <van-form v-show="!register" v-model="form" @submit="onSubmit" style="width:16rem;">
+            <van-form v-show="!register" v-model="form" style="width:16rem;">
                 <van-field
                         v-model="form.username"
                         label="登录名"
@@ -21,7 +21,8 @@
                 />
                 <div style="display:flex;justify-content:space-around;margin: 16px;">
                     <van-button round color="linear-gradient(to right, #4bb0ff, #6149f6)" type="info" size="small"
-                                native-type="submit">
+                                @click="onSubmit"
+                    >
                         登录
                     </van-button>
                     <van-button type="info" round plain size="small" @click="showRegister">
@@ -67,7 +68,7 @@
                 />
                 <van-field name="uploader" label="头像上传">
                     <template #input>
-                        <van-uploader v-model="form2.uploader" />
+                        <van-uploader v-model="form2.uploader"/>
                     </template>
                 </van-field>
                 <van-field
@@ -98,7 +99,7 @@
                     @cancel="showArea = false"
             />
         </van-popup>
-        <van-calendar v-model="showCalendar" @confirm="onConfirmBirthday" />
+        <van-calendar v-model="showCalendar" @confirm="onConfirmBirthday"/>
         <van-number-keyboard
                 style="z-index: 9999"
                 :show="showSelfNum"
@@ -115,11 +116,12 @@
 <script>
     import {Notify} from 'vant'
     import AreaList from '@/utils/area.js';
+
     export default {
         data() {
             return {
-                showSelfNum:false,
-                showCalendar:false,
+                showSelfNum: false,
+                showCalendar: false,
                 value: '',
                 showArea: false,
                 areaList: AreaList, // 数据格式见 Area 组件文档
@@ -128,14 +130,14 @@
                     username: '',
                     password: ''
                 },
-                reviewpassword:'',
+                reviewpassword: '',
                 form2: {
                     username: '',
                     password: '',
-                    uploader: [{ url: 'https://img.yzcdn.cn/vant/leaf.jpg' }],
-                    birthday:'',
-                    area:'',
-                    phone:''
+                    uploader: [{url: 'https://img.yzcdn.cn/vant/leaf.jpg'}],
+                    birthday: '',
+                    area: '',
+                    phone: ''
                 },
                 show: true
             }
@@ -182,18 +184,18 @@
             /**
              * 确定生日
              * */
-            onConfirmBirthday(date){
+            onConfirmBirthday(date) {
                 this.form2.birthday = `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
                 this.showCalendar = false;
             },
-            clickSelfNum(){
+            clickSelfNum() {
                 this.showSelfNum = true
             },
             onInput(value) {
-                this.form2.phone+=value
+                this.form2.phone += value
             },
             onDelete() {
-                this.form2.phone=this.form2.phone.substring(0,this.form2.phone.length-1)
+                this.form2.phone = this.form2.phone.substring(0, this.form2.phone.length - 1)
             }
         },
     }
