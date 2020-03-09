@@ -11,6 +11,13 @@ require('video.js/dist/video-js.css')
 
 require('vue-video-player/src/custom-theme.css')
 
+require('@/static/ckplayer/ckplayer/ckplayer.js')
+
+import moment from 'moment'
+
+Vue.prototype.$moment = moment
+Vue.use(VueVideoPlayer)
+Vue.use(Vant)
 router.beforeEach((to, from, next) => {
     if (to.path.startsWith('/login')) {
         next()
@@ -28,8 +35,7 @@ router.beforeEach((to, from, next) => {
 
 })
 
-Vue.use(VueVideoPlayer)
-Vue.use(Vant)
+
 Vue.config.productionTip = false
 new Vue({
     router,

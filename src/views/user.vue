@@ -1,6 +1,6 @@
 <template>
     <div>
-        <van-pull-refresh v-model="refresh" @refresh="onRefresh" style="padding-bottom:50px;">
+        <van-pull-refresh v-model="refresh" @refresh="onRefresh">
             <van-row>
                 <van-col span="3">
                     <van-image
@@ -51,6 +51,7 @@
                 />
             </van-popup>
         </van-pull-refresh>
+        <div style="height:80px;"></div>
         <Tabbar :activeTabBottom="activeTabBottom" :indexInfo="indexInfo"></Tabbar>
     </div>
 
@@ -74,7 +75,6 @@
         unitDesc: '元'
     };
     export default {
-        name: 'live',
         data() {
             return {
                 refresh: false,

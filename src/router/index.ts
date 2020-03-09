@@ -27,6 +27,11 @@ const routes = [
         component: () => import('../views/TVLive.vue')
     },
     {
+        path: '/details',
+        name: 'details',
+        component: () => import('../views/videoDetail.vue')
+    },
+    {
         path: '/user',
         name: 'user',
         component: () => import('../views/user.vue')

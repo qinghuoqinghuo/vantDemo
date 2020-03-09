@@ -1,6 +1,6 @@
 <template>
     <div>
-        <van-pull-refresh v-model="isLoading" @refresh="onRefresh" style="padding-bottom:100px;">
+        <van-pull-refresh v-model="isLoading" @refresh="onRefresh">
             <div class="shopCarList" :ref="item.container" v-for="(item,index) in shopCarData" :key="index">
                 <!--商店名称信息-->
                 <van-sticky :container="item.container">
@@ -56,6 +56,7 @@
                 <van-checkbox v-model="checkedAll" @click="clickAll">全选</van-checkbox>
             </van-submit-bar>
         </van-pull-refresh>
+        <div style="height:50px;"></div>
         <Tabbar :activeTabBottom="activeTabBottom" :indexInfo="indexInfo"></Tabbar>
     </div>
 
