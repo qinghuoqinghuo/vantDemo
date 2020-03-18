@@ -1,12 +1,13 @@
 <template>
     <div>
         <van-popup v-model="show" :close-on-click-overlay="false">
-            <van-form v-show="!register" v-model="form" style="width:16rem;">
+            <van-form v-show="!register" v-model="form" style="width:16rem;padding:20px 0;">
                 <van-field
                         v-model="form.username"
                         label="登录名"
                         left-icon="user-circle-o"
                         required
+                        border
                         placeholder=""
                         :rules="[{ required: true, message: '请填写登录名' }]"
                 />
@@ -16,6 +17,7 @@
                         label="密码"
                         left-icon="eye-o"
                         required
+                        border
                         placeholder=""
                         :rules="[{ required: true, message: '请填写密码' }]"
                 />
